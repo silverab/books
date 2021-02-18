@@ -40,7 +40,11 @@ INSTALLED_APPS = [
 
     'users',
     'pages',
+    # Third-party
+    'crispy_forms',
 ]
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 AUTH_USER_MODEL = 'users.CustomUser'
 
@@ -134,5 +138,15 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'),]
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+STATICFILES_FINDERS = [
+"django.contrib.staticfiles.finders.FileSystemFinder",
+"django.contrib.staticfiles.finders.AppDirectoriesFinder",
+]
+
 LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = 'home'
