@@ -41,6 +41,7 @@ INSTALLED_APPS = [
 
     'users',
     'pages',
+    'books',
 
     # Third-party
     'crispy_forms',
